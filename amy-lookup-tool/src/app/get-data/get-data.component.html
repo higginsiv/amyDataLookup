@@ -1,0 +1,36 @@
+<style>
+	.tableRow {
+		padding: 5px;
+		text-align: center
+	}
+
+	.body {
+		padding: 15px;
+	}
+</style>
+<p>Let's get some data!</p>
+<div class="form">
+	<div *ngIf="jsonData == null">
+		<label for="file">Upload CSV: </label>
+		<input type="file"
+				 id="file"
+				 (change)="handleFileInput($event.target.files)">
+	</div>
+
+	<div *ngIf="jsonData != null"
+		class="body">
+		<label for="storeNumber">Store Number: </label>
+		<input type="text"
+				 id="storeNumber"
+				(keydown.enter)="getRows()">
+		<button (click)="getRows()" (keydown.enter)="getRows()">Submit</button>
+		<table>
+			<tr class="tableRow">
+				<th class="tableRow" *ngFor="let header of headers; let i = index">{{header}}</th>
+			</tr>
+			<tr class="tableRow" *ngFor="let row of displayData; let i = index">
+				<td class="tableRow" *ngFor="let col of displayData[i]; let j = index">{{col}}</td>
+			</tr>
+		</table>
+	</div>
+</div>
