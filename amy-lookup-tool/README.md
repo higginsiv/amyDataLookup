@@ -1,3 +1,8 @@
+# William's Heading
+Everything else is angular created and I haven't gone through it yet. I set up the project poorly so 
+to deploy to github, be at project root. To successfully deploy to heroku, cd into amy-lookup-tool before
+committing using git push heroku master
+
 # AmyLookupTool
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.14.
